@@ -21,7 +21,6 @@ class Rag:
 
     # Augment the context with original prompt.
     def augment(self):
-        print(self.retriever)
         self.chain = ({"context": self.retriever, "question": RunnablePassthrough()}
                       | self.llm_obj.get_prompt()
                       | self.llm_obj.get_modal()

@@ -27,7 +27,8 @@ class VectorDbManager:
         self.vectordb._collection.delete(ids=[doc_id])
 
     def delete_ids(self, ids: List):
-        self.vectordb._collection.delete(ids=ids)
+        if len(ids) > 0:
+            self.vectordb._collection.delete(ids=ids)
 
     def get_doc_count(self):
         return self.vectordb._collection.count()
@@ -37,7 +38,9 @@ class VectorDbManager:
 
     def reset_database(self):
         collections = self.get_all_docs()
-        self.vectordb._collection.delete(ids=collections['ids'])
+
+        if collections['ids']:
+            self.vectordb._collection.delete(ids=collections['ids'])
 
     def get_doc(self, id: str):
         return self.vectordb.get(id)
