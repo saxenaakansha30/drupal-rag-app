@@ -58,7 +58,7 @@ def ask(data: Question = Body(...)):
     rag_obj.augment()
     response = rag_obj.generate(question)
 
-    return {"Response": response}
+    return {"response": response}
 
 
 @app.post("/feed/add")
