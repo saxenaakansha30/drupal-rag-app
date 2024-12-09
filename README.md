@@ -12,7 +12,8 @@ To get the server running locally:
 
 1. Clone the repository
 2. Install the requirements:
-3. Run the development server:
+3. Install Ollama, Run Ollama.
+4. Run the development server:
     `uvicorn main:app --port 8086  --reload`
 
 ## API Endpoints
