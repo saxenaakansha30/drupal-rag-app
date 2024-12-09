@@ -2,6 +2,10 @@
 
 This FastAPI application provides an API for the RAG (Retrieve, Augment, Generate) system, allowing users to ask questions and receive generated responses.
 
+## Required Packages
+
+`pip install fastapi uvicorn langchain langchain-community fastembed chromadb`
+
 ## Getting Started
 
 To get the server running locally:
